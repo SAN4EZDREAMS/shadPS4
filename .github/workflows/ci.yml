@@ -5,10 +5,10 @@ name: Reuse
 
 on:
   push:
-    branches: [ main ]
+    branches: [ bb-skip-shaders ]
     tags: [ "*" ]
   pull_request:
-    branches: [ main ]
+    branches: [ bb-skip-shaders ]
 jobs:
   reuse:
     runs-on: ubuntu-latest

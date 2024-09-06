@@ -5,9 +5,9 @@ name: macOS
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "bb-skip-shaders" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "bb-skip-shaders" ]
 
 env:
   BUILD_TYPE: Release

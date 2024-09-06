@@ -7,7 +7,7 @@ on:
   push:
     branches: [ "*" ]
   pull_request:
-    branches: [ main ]
+    branches: [ bb-skip-shaders ]
 
 jobs:
   clang-format:

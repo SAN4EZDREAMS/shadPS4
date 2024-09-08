@@ -5,7 +5,7 @@ name: Windows
 
 on:
   push:
-    branches: [ MugetsuD ]
+    branches: [ "MugetsuD" ]
   pull_request:
     branches: [ "main" ]
 

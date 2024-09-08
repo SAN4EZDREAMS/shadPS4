@@ -5,7 +5,7 @@ name: Linux
 
 on:
   push:
-    branches: [ "MugetsuD" ]
+    branches: [ "Dmugetsu" ]
   pull_request:
     branches: [ "main" ]
 

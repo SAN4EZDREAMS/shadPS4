@@ -5,9 +5,9 @@ name: Linux-Qt
 
 on:
   push:
-    branches: [ "bb-deadlock-shaders-fixes" ]
+    branches: [ "Dmugetsu" ]
   pull_request:
-    branches: [ "bb-deadlock-shaders-fixes" ]
+    branches: [ "main" ]
 
 env:
   BUILD_TYPE: Release

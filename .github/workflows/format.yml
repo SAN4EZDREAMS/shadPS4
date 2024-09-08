@@ -5,7 +5,7 @@ name: Clang Format
 
 on:
   push:
-    branches: [ "*" ]
+    branches: [ MugetsuD ]
   pull_request:
     branches: [ main ]
 

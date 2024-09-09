@@ -5,9 +5,9 @@ name: Linux-Qt
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "bb-shaders-skip" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "bb-shaders-skip" ]
 
 env:
   BUILD_TYPE: Release

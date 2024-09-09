@@ -5,9 +5,9 @@ name: macOS
 
 on:
   push:
-    branches: [ "MugetsuD" ]
+    branches: [ "bb-first-stable" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "bb-first-stable" ]
 
 env:
   BUILD_TYPE: Release

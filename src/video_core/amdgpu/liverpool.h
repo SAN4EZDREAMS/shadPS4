@@ -1181,6 +1181,7 @@ private:
         ComputeProgram cs_state{};
         VAddr indirect_args_addr{};
     };
+
     std::array<GpuQueue, NumTotalQueues> mapped_queues{};
 
     struct ConstantEngine {

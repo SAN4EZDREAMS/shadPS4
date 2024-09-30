@@ -420,7 +420,6 @@ void Rasterizer::UpdateViewportScissorState() {
     const auto cmdbuf = scheduler.CommandBuffer();
     cmdbuf.setViewport(0, viewports);
     cmdbuf.setScissor(0, scissors);
-
 }
 
 void Rasterizer::UpdateDepthStencilState() {

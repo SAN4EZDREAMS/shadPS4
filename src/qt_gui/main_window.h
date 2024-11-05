@@ -45,6 +45,11 @@ public:
     void InstallDirectory();
     void StartGame();
 
+private slots:
+    void on_backupFolderButton_clicked();
+    void on_backupIntervalSpinBox_valueChanged(int arg1);
+    void on_backupEnabledCheckBox_stateChanged(int arg1);
+
 private Q_SLOTS:
     void ConfigureGuiFromSettings();
     void SaveWindowState() const;
@@ -56,6 +61,7 @@ private Q_SLOTS:
 
 private:
     Ui_MainWindow* ui;
+    SaveBackup *m_saveBackup;
     void AddUiWidgets();
     void CreateActions();
     void CreateRecentGameActions();
@@ -124,17 +130,4 @@ protected:
     }
 
     void resizeEvent(QResizeEvent* event) override;
-
-public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-private slots:
-    void on_backupFolderButton_clicked();
-    void on_backupIntervalSpinBox_valueChanged(int arg1);
-    void on_backupEnabledCheckBox_stateChanged(int arg1);
-
-private:
-    Ui::MainWindow *ui;
-    SaveBackup *m_saveBackup;
 };

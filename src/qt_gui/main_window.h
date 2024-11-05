@@ -6,6 +6,7 @@
 #include <QActionGroup>
 #include <QDragEnterEvent>
 #include <QTranslator>
+#include <QMainWindow>
 
 #include "background_music_player.h"
 #include "common/config.h"
@@ -22,8 +23,13 @@
 #include "main_window_themes.h"
 #include "main_window_ui.h"
 #include "pkg_viewer.h"
+#include "core/save_backup.h"
 
 class GameListFrame;
+
+namespace Ui {
+class MainWindow;
+}
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -118,4 +124,17 @@ protected:
     }
 
     void resizeEvent(QResizeEvent* event) override;
+
+public:
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void on_backupFolderButton_clicked();
+    void on_backupIntervalSpinBox_valueChanged(int arg1);
+    void on_backupEnabledCheckBox_stateChanged(int arg1);
+
+private:
+    Ui::MainWindow *ui;
+    SaveBackup *m_saveBackup;
 };

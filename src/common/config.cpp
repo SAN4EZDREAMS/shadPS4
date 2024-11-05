@@ -84,30 +84,6 @@ std::string emulator_language = "en";
 // Settings
 u32 m_language = 1; // english
 
-bool getSaveBackupEnabled() {
-    return g_config->value("SaveBackup/Enabled", false).toBool();
-}
-
-void setSaveBackupEnabled(bool enabled) {
-    g_config->setValue("SaveBackup/Enabled", enabled);
-}
-
-QString getSaveBackupFolder() {
-    return g_config->value("SaveBackup/Folder", "").toString();
-}
-
-void setSaveBackupFolder(const QString& folder) {
-    g_config->setValue("SaveBackup/Folder", folder);
-}
-
-int getSaveBackupInterval() {
-    return g_config->value("SaveBackup/Interval", 60).toInt();
-}
-
-void setSaveBackupInterval(int minutes) {
-    g_config->setValue("SaveBackup/Interval", minutes);
-}
-
 bool isNeoMode() {
     return isNeo;
 }

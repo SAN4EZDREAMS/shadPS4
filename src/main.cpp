@@ -4,7 +4,6 @@
 #include <fmt/core.h>
 #include "common/memory_patcher.h"
 #include "emulator.h"
-#include "core/save_backup_manager.h"
 
 #ifdef _WIN32
 #include <windows.h>
@@ -13,10 +12,6 @@
 int main(int argc, char* argv[]) {
 #ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
-    SaveBackupManager* m_saveBackupManager = new SaveBackupManager(this);
-    m_saveBackupManager->setEnabled(getSaveBackupEnabled());
-    m_saveBackupManager->setBackupFolder(getSaveBackupFolder());
-    m_saveBackupManager->setBackupInterval(getSaveBackupInterval());
 #endif
 
     if (argc == 1) {

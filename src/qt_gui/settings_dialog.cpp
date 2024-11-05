@@ -306,33 +306,6 @@ SettingsDialog::SettingsDialog(std::span<const QString> physical_devices, QWidge
         ui->vkSyncValidationCheckBox->installEventFilter(this);
         ui->rdocCheckBox->installEventFilter(this);
     }
-    // In the constructor or setupUi function
-    connect(ui->browseBackupFolderButton, &QPushButton::clicked, this, &SettingsDialog::browseBackupFolder);
-
-    // Add this function to the class
-    void SettingsDialog::browseBackupFolder() {
-        QString dir = QFileDialog::get ExistingDirectory(this, tr("Select Backup Folder"), QString(), QFileDialog::ShowDirsOnly);
-        if (!dir.isEmpty()) {
-            ui->backupFolderLineEdit->setText(dir);
-        }
-    }
-
-    // In the function that saves settings
-    void SettingsDialog::saveSettings() {
-        bool enabled = ui->enableSaveBackupCheckBox->isChecked();
-        QString folder = ui->backupFolderLineEdit->text();
-        int interval = ui->backupIntervalSpinBox->value();
-
-        setSaveBackupEnabled(enabled);
-        setSaveBackupFolder(folder);
-        setSaveBackupInterval(interval);
-
-        if (m_saveBackupManager) {
-            m_saveBackupManager->setEnabled(enabled);
-            m_saveBackupManager->setBackupFolder(folder);
-            m_saveBackupManager->setBackupInterval(interval);
-        }
-    }
 }
 
 void SettingsDialog::LoadValuesFromConfig() {
@@ -390,8 +363,6 @@ void SettingsDialog::LoadValuesFromConfig() {
     ui->backButtonBehaviorComboBox->setCurrentIndex(index != -1 ? index : 0);
 
     ui->removeFolderButton->setEnabled(!ui->gameFoldersListWidget->selectedItems().isEmpty());
-
-    
 }
 
 void SettingsDialog::InitializeEmulatorLanguages() {

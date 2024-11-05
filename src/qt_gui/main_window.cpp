@@ -4,6 +4,7 @@
 #include <QDockWidget>
 #include <QKeyEvent>
 #include <QProgressDialog>
+#include <QFileDialog>
 
 #include "about_dialog.h"
 #include "cheats_patches.h"
@@ -20,9 +21,18 @@
 #include "main_window.h"
 #include "settings_dialog.h"
 #include "video_core/renderer_vulkan/vk_instance.h"
+#include "settings_dialog.ui"
 
-MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow), m_saveBackup(new SaveBackup(this)){
     ui->setupUi(this);
+     m_saveBackup->setBackupFolder(QDir::homePath() + "/shadPS4_backups");
+    m_saveBackup->setBackupInterval(60); // Default to 60 minutes
+    m_saveBackup->setEnabled(false);
+
+    // Update UI to reflect initial settings
+    ui->backupFolderLineEdit->setText(QDir::homePath() + "/shadPS4_backups");
+    ui->backupIntervalSpinBox->setValue(60);
+    ui->backupEnabledCheckBox->setChecked(false);
     installEventFilter(this);
     setAttribute(Qt::WA_DeleteOnClose);
 }
@@ -31,6 +41,7 @@ MainWindow::~MainWindow() {
     SaveWindowState();
     const auto config_dir = Common::FS::GetUserPath(Common::FS::PathType::UserDir);
     Config::save(config_dir / "config.toml");
+    delete ui;
 }
 
 bool MainWindow::Init() {
@@ -1059,4 +1070,23 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event) {
         }
     }
     return QMainWindow::eventFilter(obj, event);
+}
+
+void MainWindow::on_backupFolderButton_clicked()
+{
+    QString folder = QFileDialog::getExistingDirectory(this, tr("Select Backup Folder"), QDir::homePath());
+    if (!folder.isEmpty()) {
+        ui->backupFolderLineEdit->setText(folder);
+        m_saveBackup->setBackupFolder(folder);
+    }
+}
+
+void MainWindow::on_backupIntervalSpinBox_valueChanged(int arg1)
+{
+    m_saveBackup->setBackupInterval(arg1);
+}
+
+void MainWindow::on_backupEnabledCheckBox_stateChanged(int arg1)
+{
+    m_saveBackup->setEnabled(arg1 == Qt::Checked);
 }

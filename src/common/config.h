@@ -121,6 +121,13 @@ std::vector<std::string> getElfViewer();
 std::vector<std::string> getRecentFiles();
 std::string getEmulatorLanguage();
 
+bool getSaveBackupEnabled();
+void setSaveBackupEnabled(bool enabled);
+QString getSaveBackupFolder();
+void setSaveBackupFolder(const QString& folder);
+int getSaveBackupInterval();
+void setSaveBackupInterval(int minutes);
+
 void setDefaultValues();
 
 // settings

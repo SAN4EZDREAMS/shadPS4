@@ -217,7 +217,7 @@
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="332"/>
-			<source>Delete %1</source>
+			<source>Delete %2</source>
 			<translation>Видалити %2</translation> /**2% is tested for game folder */
 		</message>
 		<message>

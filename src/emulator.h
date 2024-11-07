@@ -27,7 +27,8 @@ public:
 
     void Run(const std::filesystem::path& file);
     void UpdatePlayTime(const std::string& serial);
-
+    SaveBackupManager& GetSaveBackupManager() { return save_backup_manager; }
+    
 private:
     void LoadSystemModules(const std::filesystem::path& file, std::string game_serial);
 
@@ -36,6 +37,7 @@ private:
     Core::Linker* linker;
     std::unique_ptr<Frontend::WindowSDL> window;
     std::chrono::steady_clock::time_point start_time;
+    SaveBackupManager save_backup_manager;
 };
 
 } // namespace Core

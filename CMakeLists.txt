@@ -540,6 +540,8 @@ set(CORE src/core/aerolib/stubs.cpp
          src/core/tls.h
          src/core/virtual_memory.cpp
          src/core/virtual_memory.h
+         src/core/save_backup_manager.cpp
+         src/core/save_backup_manager.h
 )
 
 if (ARCHITECTURE STREQUAL "x86_64")

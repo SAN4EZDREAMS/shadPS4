@@ -101,6 +101,11 @@ Emulator::~Emulator() {
     Config::save(config_dir / "config.toml");
 }
 
+void Emulator::Initialize() {
+    // Initialize other components
+    save_backup_manager.Initialize();
+}
+
 void Emulator::Run(const std::filesystem::path& file) {
 
     // Use the eboot from the separated updates folder if it's there

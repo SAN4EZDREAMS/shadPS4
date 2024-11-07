@@ -6,7 +6,6 @@
 #include <QActionGroup>
 #include <QDragEnterEvent>
 #include <QTranslator>
-#include <QMainWindow>
 
 #include "background_music_player.h"
 #include "common/config.h"
@@ -23,13 +22,9 @@
 #include "main_window_themes.h"
 #include "main_window_ui.h"
 #include "pkg_viewer.h"
-#include "core/save_backup.h"
+#include "core/save_backup_manager.h"
 
 class GameListFrame;
-
-namespace Ui {
-class MainWindow;
-}
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -45,11 +40,6 @@ public:
     void InstallDirectory();
     void StartGame();
 
-private slots:
-    void on_backupFolderButton_clicked();
-    void on_backupIntervalSpinBox_valueChanged(int arg1);
-    void on_backupEnabledCheckBox_stateChanged(int arg1);
-
 private Q_SLOTS:
     void ConfigureGuiFromSettings();
     void SaveWindowState() const;
@@ -61,7 +51,6 @@ private Q_SLOTS:
 
 private:
     Ui_MainWindow* ui;
-    SaveBackup *m_saveBackup;
     void AddUiWidgets();
     void CreateActions();
     void CreateRecentGameActions();
@@ -130,4 +119,17 @@ protected:
     }
 
     void resizeEvent(QResizeEvent* event) override;
+};
+
+class SaveBackupDialog : public QDialog {
+    Q_OBJECT
+public:
+    explicit SaveBackupDialog(QWidget* parent = nullptr);
+private slots:
+    void CreateBackup();
+    void RestoreBackup();
+    void ManageBackups();
+private:
+    void SetupUI();
+    // Add necessary UI components
 };

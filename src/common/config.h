@@ -125,4 +125,17 @@ void setDefaultValues();
 
 // settings
 u32 GetLanguage();
+
+struct SaveBackupConfig {
+    std::string backup_path;
+    bool auto_backup{true};
+    int backup_interval{24}; // hours
+    int max_backups{5};
+};
+
+class Config {
+public:
+    SaveBackupConfig save_backup;
+};
+
 }; // namespace Config

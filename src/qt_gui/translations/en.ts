@@ -1472,25 +1472,5 @@
 			<source>Failed to create the update script file</source>
 			<translation>Failed to create the update script file</translation>
 		</message>
-		<message>
-			<source>Save Backup Settings</source>
-			<translation>Save Backup Settings</translation>
-		</message>
-		<message>
-			<source>Backup Folder:</source>
-			<translation>Backup Folder:</translation>
-		</message>
-		<message>
-			<source>Browse</source>
-			<translation>Browse</translation>
-		</message>
-		<message>
-			<source>Backup Interval (minutes):</source>
-			<translation>Backup Interval (minutes):</translation>
-		</message>
-		<message>
-			<source>Enable Automatic Backups</source>
-			<translation>Enable Automatic Backups</translation>
-		</message>
 	</context>
 </TS>

@@ -422,4 +422,24 @@ int WindowSDL::sdlGamepadToOrbisButton(u8 button) {
     }
 }
 
+// In sdl_window.cpp
+void SDLWindow::DrawSaveBackupUI() {
+    if (ImGui::BeginMenu("Saves")) {
+        if (ImGui::MenuItem("Backup Current Save")) {
+            // Handle backup
+        }
+        if (ImGui::MenuItem("Restore Backup")) {
+            // Handle restore
+        }
+        if (ImGui::MenuItem("Manage Backups")) {
+            show_backup_manager = true;
+        }
+        ImGui::EndMenu();
+    }
+    
+    if (show_backup_manager) {
+        DrawBackupManager();
+    }
+}
+
 } // namespace Frontend

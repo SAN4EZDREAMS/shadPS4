@@ -10,6 +10,7 @@
 
 #include "common/config.h"
 #include "common/path_util.h"
+#include "core/save_backup_manager.h"
 
 namespace Ui {
 class SettingsDialog;
@@ -29,6 +30,10 @@ public:
 signals:
     void LanguageChanged(const std::string& locale);
 
+private slots:
+    void onBrowseBackupDirectory();
+    void onBackupSettingsChanged();
+
 private:
     void LoadValuesFromConfig();
     void InitializeEmulatorLanguages();
@@ -42,4 +47,6 @@ private:
     QString defaultTextEdit;
 
     int initialHeight;
+
+    Core::SaveBackupManager* backup_manager;
 };

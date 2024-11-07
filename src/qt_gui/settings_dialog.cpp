@@ -504,6 +504,28 @@ void SettingsDialog::updateNoteTextEdit(const QString& elementName) {
     ui->descriptionText->setText(text.replace("\\n", "\n"));
 }
 
+void SettingsDialog::CreateSaveBackupTab() {
+    QWidget* tab = new QWidget;
+    QVBoxLayout* layout = new QVBoxLayout;
+    
+    // Backup path
+    QLineEdit* pathEdit = new QLineEdit(QString::fromStdString(config.save_backup.backup_path));
+    layout->addWidget(pathEdit);
+    
+    // Auto backup toggle
+    QCheckBox* autoBackup = new QCheckBox(tr("Enable Automatic Backups"));
+    autoBackup->setChecked(config.save_backup.auto_backup);
+    layout->addWidget(autoBackup);
+    
+    // Interval setting
+    QSpinBox* intervalBox = new QSpinBox();
+    intervalBox->setValue(config.save_backup.backup_interval);
+    layout->addWidget(intervalBox);
+    
+    tab->setLayout(layout);
+    ui->tabWidget->addTab(tab, tr("Save Backups"));
+}
+
 bool SettingsDialog::eventFilter(QObject* obj, QEvent* event) {
     if (event->type() == QEvent::Enter || event->type() == QEvent::Leave) {
         if (qobject_cast<QWidget*>(obj)) {

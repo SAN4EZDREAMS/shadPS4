@@ -192,6 +192,62 @@
                </item>
               </layout>
              </widget>
+             <widget class="QGroupBox" name="saveBackupGroup">
+               <property name="title">
+                 <string>Save Backup Settings</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout">
+                 <item>
+                   <widget class="QCheckBox" name="enableBackupCheckBox">
+                     <property name="text">
+                       <string>Enable Automatic Save Backup</string>
+                     </property>
+                   </widget>
+                 </item>
+                 <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout">
+                     <item>
+                       <widget class="QLabel" name="intervalLabel">
+                         <property name="text">
+                           <string>Backup Interval (minutes):</string>
+                         </property>
+                       </widget>
+                     </item>
+                     <item>
+                       <widget class="QSpinBox" name="backupIntervalSpinBox">
+                         <property name="minimum">
+                           <number>5</number>
+                         </property>
+                         <property name="maximum">
+                           <number>1440</number>
+                         </property>
+                         <property name="value">
+                           <number>30</number>
+                         </property>
+                       </widget>
+                     </item>
+                   </layout>
+                 </item>
+                 <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_2">
+                     <item>
+                       <widget class="QLineEdit" name="backupDirectoryEdit">
+                         <property name="readOnly">
+                           <bool>true</bool>
+                         </property>
+                       </widget>
+                     </item>
+                     <item>
+                       <widget class="QPushButton" name="browseBackupButton">
+                         <property name="text">
+                           <string>Browse</string>
+                         </property>
+                       </widget>
+                     </item>
+                   </layout>
+                 </item>
+               </layout>
+             </widget>
             </item>
            </layout>
           </item>
@@ -1289,58 +1345,6 @@
      </property>
      <property name="readOnly">
       <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-  </layout>
- </widget>
-  <widget class="QGroupBox" name="saveBackupGroupBox">
-  <property name="title">
-   <string>Save Backup Settings</string>
-  </property>
-  <layout class="QFormLayout" name="formLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="backupFolderLabel">
-     <property name="text">
-      <string>Backup Folder:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLineEdit" name="backupFolderLineEdit"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="backupFolderButton">
-       <property name="text">
-        <string>Browse</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="backupIntervalLabel">
-     <property name="text">
-      <string>Backup Interval (minutes):</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QSpinBox" name="backupIntervalSpinBox">
-     <property name="minimum">
-      <number>1</number>
-     </property>
-     <property name="maximum">
-      <number>1440</number>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="2">
-    <widget class="QCheckBox" name="backupEnabledCheckBox">
-     <property name="text">
-      <string>Enable Automatic Backups</string>
      </property>
     </widget>
    </item>

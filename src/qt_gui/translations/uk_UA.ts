@@ -218,12 +218,12 @@
 		<message>
 			<location filename="../gui_context_menus.h" line="332"/>
 			<source>Delete %1</source>
-			<translation>Видалити %1</translation>
+			<translation>Видалити %2</translation> /**2% is tested for game folder */
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="333"/>
 			<source>Are you sure you want to delete %1's %2 directory?</source>
-			<translation>Ви впевнені, що хочете видалити папку %1 з папки %2??</translation>
+			<translation>Ви впевнені, що хочете видалити %1 з папки %2??</translation>
 		</message>
 	</context>
 	<context>

@@ -2,6 +2,9 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QDir>
+#include <QFile>
+#include <QDateTime>
+#include <QTimer>
 #include "core/save_backup_manager.h"
 
 namespace Core {
@@ -37,40 +40,34 @@ void SaveBackupManager::setBackupDirectory(const QString& path) {
     backup_directory = path;
 }
 
-bool SaveBackupManager::createBackupDirectory(const std::filesystem::path& path) {
-    try {
-        if (!std::filesystem::exists(path)) {
-            return std::filesystem::create_directories(path);
-        }
-        return true;
-    } catch (const std::filesystem::filesystem_error&) {
-        return false;
+bool SaveBackupManager::createBackupDirectory(const QString& path) {
+    QDir dir(path);
+    if (!dir.exists()) {
+        return dir.mkpath(".");
     }
+    return true;
 }
 
-void SaveBackupManager::copyDirectory(const std::filesystem::path& src, const std::filesystem::path& dst) {
-    try {
-        if (!std::filesystem::exists(src)) {
-            return;
-        }
+void SaveBackupManager::copyDirectory(const QString& src, const QString& dst) {
+    QDir srcDir(src);
+    if (!srcDir.exists())
+        return;
 
-        if (!std::filesystem::exists(dst)) {
-            std::filesystem::create_directories(dst);
-        }
+    QDir dstDir(dst);
+    if (!dstDir.exists()) {
+        dstDir.mkpath(".");
+    }
 
-        for (const auto& entry : std::filesystem::directory_iterator(src)) {
-            const auto& path = entry.path();
-            const auto destination = dst / path.filename();
-            
-            if (std::filesystem::is_directory(path)) {
-                copyDirectory(path, destination);
-            } else {
-                std::filesystem::copy_file(path, destination, 
-                    std::filesystem::copy_options::overwrite_existing);
-            }
+    QStringList files = srcDir.entryList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
+    for (const QString& file : files) {
+        QString srcPath = srcDir.filePath(file);
+        QString dstPath = dstDir.filePath(file);
+
+        if (QFileInfo(srcPath).isDir()) {
+            copyDirectory(srcPath, dstPath);
+        } else {
+            QFile::copy(srcPath, dstPath);
         }
-    } catch (const std::filesystem::filesystem_error&) {
-        // Handle error
     }
 }
 
@@ -80,16 +77,15 @@ void SaveBackupManager::performBackup() {
     }
 
     // Get current save directory path
-    const auto save_dir = std::filesystem::path("ShadPS4/user/savedata"); // Actual save directory
+    QString save_dir = "ShadPS4/user/savedata"; // Actual save directory
     
-    if (!std::filesystem::exists(save_dir)) {
+    if (!QDir(save_dir).exists()) {
         return;
     }
 
     // Create backup directory with timestamp
-    const auto timestamp = QDateTime::currentDateTime().toString("yyyy-MM-dd_hh-mm-ss");
-    const auto backup_path = std::filesystem::path(backup_directory.toStdString()) / 
-                            ("backup_" + timestamp.toStdString());
+    QString timestamp = QDateTime::currentDateTime().toString("yyyy-MM-dd_hh-mm-ss");
+    QString backup_path = backup_directory + "/backup_" + timestamp;
 
     if (createBackupDirectory(backup_path)) {
         copyDirectory(save_dir, backup_path);

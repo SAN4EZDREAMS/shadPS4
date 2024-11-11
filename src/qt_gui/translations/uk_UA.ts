@@ -158,7 +158,7 @@
 		<message>
 			<location filename="../gui_context_menus.h" line="72"/>
 			<source>Delete...</source>
-			<translation>Видалення...</translation>
+			<translation>Видалити...</translation>
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="73"/>
@@ -238,7 +238,7 @@
 		<message>
 			<location filename="../gui_context_menus.h" line="333"/>
 			<source>Are you sure you want to delete %1's %2 directory?</source>
-			<translation>Ви впевнені, що хочете видалити %1 з папки %2??</translation>
+			<translation>Ви впевнені, що хочете видалити %1 з папки %2?</translation>
 		</message>
 	</context>
 	<context>
@@ -261,7 +261,7 @@
 		<message>
 			<location filename="../main_window_ui.h" line="308"/>
 			<source>Check for Updates</source>
-			<translation>Перевити наявність оновлень</translation>
+			<translation>Перевірити наявність оновлень</translation>
 		</message>
 		<message>
 			<location filename="../main_window_ui.h" line="314"/>
@@ -655,7 +655,7 @@
 		<message>
 			<location filename="../settings_dialog.ui" line="286"/>
 			<source>Check for Updates at Startup</source>
-			<translation>Перевірка оновлень під час запуску</translation>
+			<translation>Перевіряти оновлення під час запуску</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.ui" line="313"/>

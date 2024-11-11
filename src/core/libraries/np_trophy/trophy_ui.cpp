@@ -4,6 +4,8 @@
 #include <chrono>
 #include <mutex>
 #include <imgui.h>
+#include <QCoreApplication>
+
 #include "common/assert.h"
 #include "common/singleton.h"
 #include "imgui/imgui_std.h"
@@ -21,7 +23,7 @@ TrophyUI::TrophyUI(const std::filesystem::path& trophyIconPath, const std::strin
     if (std::filesystem::exists(trophyIconPath)) {
         trophy_icon = RefCountedTexture::DecodePngFile(trophyIconPath);
     } else {
-        LOG_ERROR(Lib_NpTrophy, "Couldnt load trophy icon at {}",
+        LOG_ERROR(Lib_NpTrophy, "Couldn't load trophy icon at {}",
                   fmt::UTF(trophyIconPath.u8string()));
     }
     AddLayer(this);
@@ -48,7 +50,7 @@ void TrophyUI::Draw() {
     SetNextWindowPos(ImVec2(io.DisplaySize.x - 250, 50));
     KeepNavHighlight();
 
-    if (Begin("Trophy Window", nullptr,
+    if (Begin(QCoreApplication::translate("TrophyUI", "Trophy Window"), nullptr,
               ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoSavedSettings |
                   ImGuiWindowFlags_NoInputs)) {
         if (trophy_icon) {
@@ -61,7 +63,7 @@ void TrophyUI::Draw() {
                                                       GetColorU32(ImVec4{0.7f}));
             ImGui::Indent(60);
         }
-        TextWrapped("Trophy earned!\n%s", trophy_name.c_str());
+        TextWrapped(QCoreApplication::translate("TrophyUI", "Trophy earned!\n%s"), trophy_name.c_str());
     }
     End();
 

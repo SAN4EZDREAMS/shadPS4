@@ -123,17 +123,17 @@
 		<message>
 			<location filename="../gui_context_menus.h" line="50"/>
 			<source>Open Game Folder</source>
-			<translation>Відкрити папку з грою</translation>
+			<translation>Відкрити папку гри</translation>
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="51"/>
 			<source>Open Save Data Folder</source>
-			<translation>Відкрити Папку Збережених Даних</translation>
+			<translation>Відкрити папку збережень гри</translation>
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="52"/>
 			<source>Open Log Folder</source>
-			<translation>Відкрити Папку Логів</translation>
+			<translation>Відкрити папку логів</translation>
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="59"/>
@@ -143,7 +143,7 @@
 		<message>
 			<location filename="../gui_context_menus.h" line="60"/>
 			<source>Copy Name</source>
-			<translation>Копіювати Ім’я</translation>
+			<translation>Копіювати назву гри</translation>
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="61"/>
@@ -203,7 +203,7 @@
 		<message>
 			<location filename="../gui_context_menus.h" line="299"/>
 			<source>Game</source>
-			<translation>Ігри</translation>
+			<translation>гри</translation>
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="305"/>
@@ -233,7 +233,7 @@
 		<message>
 			<location filename="../gui_context_menus.h" line="332"/>
 			<source>Delete %1</source>
-			<translation>Видалити %1</translation>
+			<translation>Видалення %1</translation>
 		</message>
 		<message>
 			<location filename="../gui_context_menus.h" line="333"/>
@@ -346,12 +346,12 @@
 		<message>
 			<location filename="../main_window_ui.h" line="343"/>
 			<source>Game Install Directory</source>
-			<translation>Каталог встановлення гри</translation>
+			<translation>Каталоги ігор та оновлень</translation>
 		</message>
 		<message>
 			<location filename="../main_window_ui.h" line="343"/>
 			<source>Download Cheats/Patches</source>
-			<translation>Завантажити Чити або Патчі</translation>
+			<translation>Завантажити Чити/Патчі</translation>
 		</message>
 		<message>
 			<location filename="../main_window_ui.h" line="345"/>
@@ -620,7 +620,7 @@
 		<message>
 			<location filename="../settings_dialog.ui" line="1141"/>
 			<source>Remove</source>
-			<translation>Видалити</translation>
+			<translation>Вилучити</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.ui" line="517"/>
@@ -846,7 +846,7 @@
 		<message>
 			<location filename="../cheats_patches.cpp" line="50"/>
 			<source>defaultTextEdit_MSG</source>
-			<translation>Чити та Патчі є експериментальними.\nВикористовуйте з обережністю.\n\nЗавантажуйте чити окремо, вибравши репозиторій і натиснувши кнопку завантаження.\nУ вкладці "Патчі" ви можете завантажити всі патчі відразу, вибрати, які з них ви хочете використовувати, і зберегти свій вибір.\n\nОскільки ми не займаємося розробкою читів/патчів,\nбудь ласка, повідомляйте про проблеми автору чита/патча.\n\nСтворили новий чит? Відвідайте:\nhttps://github.com/shadps4-emu/ps4_cheats</translation>
+			<translation>Чити та Патчі є експериментальними.\nВикористовуйте їх з обережністю.\n\nЗавантажуйте чити окремо, вибравши репозиторій і натиснувши кнопку завантаження.\nУ вкладці "Патчі" ви можете завантажити всі патчі відразу, вибрати, які з них ви хочете використовувати, і зберегти свій вибір.\n\nОскільки ми не займаємося розробкою читів/патчів, будь ласка, повідомляйте про проблеми автору чита/патча.\n\nСтворили новий чит? Відвідайте:\nhttps://github.com/shadps4-emu/ps4_cheats</translation>
 		</message>
 		<message>
 			<location filename="../cheats_patches.cpp" line="69"/>
@@ -1041,7 +1041,7 @@
 		<message>
 			<location filename="../cheats_patches.cpp" line="763"/>
 			<source>DownloadComplete_MSG</source>
-			<translation>Патчі успішно завантажено! Всі доступні патчі для усіх ігор, завантажено, немає необхідності завантажувати їх окремо для кожної гри, як це відбувається у випадку з читами. Якщо патч не з’являється, можливо, його не існує для конкретного серійного номера та версії гри. Можливо, необхідно оновити гру.</translation>
+			<translation>Патчі успішно завантажено! Всі доступні патчі для усіх ігор, завантажено, немає необхідності завантажувати їх окремо для кожної гри, як це відбувається у випадку з читами. Якщо патч не з'являється, можливо, його не існує для конкретного серійного номера та версії гри. Можливо, необхідно оновити гру.</translation>
 		</message>
 		<message>
 			<location filename="../cheats_patches.cpp" line="773"/>
@@ -1106,7 +1106,7 @@
 		<message>
 			<location filename="../cheats_patches.cpp" line="1006"/>
 			<source>Name:</source>
-			<translation>Ім'я:</translation>
+			<translation>Назва:</translation>
 		</message>
 		<message>
 			<location filename="../cheats_patches.cpp" line="1163"/>
@@ -1159,7 +1159,7 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="293"/>
 			<source>separateUpdatesCheckBox</source>
-			<translation>Окрема папка для оновлень:\nДає змогу встановлювати оновлення гри в окрему папку для зручності.</translation>
+			<translation>Окрема папка для оновлень:\nДає можливість встановлювати ігрові оновлення в окрему папку для зручності.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="295"/>
@@ -1169,7 +1169,7 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="297"/>
 			<source>ps4proCheckBox</source>
-			<translation>Режим PS4 Pro:\nЗмушує емулятор працювати як PS4 Pro, що може ввімкнути спеціальні функції в іграх, які підтримують це.</translation>
+			<translation>Режим PS4 Pro:\nЗмушує емулятор працювати як PS4 Pro, що може активувати спеціальні функції в іграх, які підтримують це.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="438"/>
@@ -1179,7 +1179,7 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="299"/>
 			<source>userName</source>
-			<translation>Ім'я користувача:\nВстановіть ім'я користувача акаунта PS4. Це може відображатися в деяких іграх.</translation>
+			<translation>Ім'я користувача:\nВстановіть ім'я користувача акаунта PS4. Воно може відображатися в деяких іграх.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="301"/>
@@ -1194,17 +1194,17 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="305"/>
 			<source>updaterGroupBox</source>
-			<translation>Оновлення:\nRelease: Офіційні версії, які випускаються щомісяця і можуть бути дуже старими, але вони більш надійні та перевірені.\nNightly: Версії для розробників, які мають усі найновіші функції та виправлення, але можуть містити помилки та є менш стабільними.</translation>
+			<translation>Оновлення:\nRelease: Офіційні версії, які випускаються щомісяця і можуть бути застарілими, але вони більш стабільні та перевірені.\nNightly: Версії для розробників, які мають усі найновіші функції та виправлення, але можуть містити помилки та є менш стабільними.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="306"/>
 			<source>GUIgroupBox</source>
-			<translation>Грати заголовну музику:\nВмикає відтворення спеціальної музики під час вибору гри в списку, якщо вона це підтримує.</translation>
+			<translation>Грати заголовну музику:\nВмикає відтворення спеціальної музики під час вибору гри у списку, якщо вона це підтримує.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="450"/>
 			<source>hideCursorGroupBox</source>
-			<translation>Приховувати курсор:\nВиберіть, коли курсор зникне:\nНіколи: Ви завжди будете бачити мишу.\nПри бездіяльності: Встановіть час, через який курсор зникне в разі бездіяльності.\nЗавжди: Ви ніколи не будете бачити мишу.</translation>
+			<translation>Приховувати курсор:\nВиберіть, коли курсор зникатиме:\nНіколи: Курсор миші завжди буде видимий.\nПри бездіяльності: Встановіть час, через який курсор зникне в разі бездіяльності.\nЗавжди: Курсор миші завжди буде прихований.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="452"/>
@@ -1234,22 +1234,22 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="101"/>
 			<source>Touchpad Left</source>
-			<translation>Тачпад ліворуч</translation>
+			<translation>Ліва сторона тачпаду</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="102"/>
 			<source>Touchpad Right</source>
-			<translation>Тачпад праворуч</translation>
+			<translation>Права сторона тачпаду</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="103"/>
 			<source>Touchpad Center</source>
-			<translation>Тачпад по центру </translation>
+			<translation>Середина тачпаду</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="104"/>
 			<source>None</source>
-			<translation>Ні</translation>
+			<translation>Без змін</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="312"/>
@@ -1279,7 +1279,7 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="465"/>
 			<source>gameFoldersBox</source>
-			<translation>Ігрові папки:\nСписок папок для перевірки встановлених ігор.</translation>
+			<translation>Ігрові папки:\nСписок папок, що скануватимуться для виявлення ігор.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="465"/>
@@ -1289,7 +1289,7 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="465"/>
 			<source>removeFolderButton</source>
-			<translation>Видалити:\nВидалити папку зі списку.</translation>
+			<translation>Вилучити:\nВилучити папку зі списку.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="329"/>
@@ -1400,7 +1400,7 @@
 		<message>
 			<location filename="../check_update.cpp" line="148"/>
 			<source>Your version is already up to date!</source>
-			<translation>Вашу версію вже оновлено!</translation>
+			<translation>У вас актуальна версія!</translation>
 		</message>
 		<message>
 			<location filename="../check_update.cpp" line="172"/>

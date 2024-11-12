@@ -346,7 +346,7 @@
 		<message>
 			<location filename="../main_window_ui.h" line="343"/>
 			<source>Game Install Directory</source>
-			<translation>Каталоги ігор та оновлень</translation>
+			<translation>Каталоги ігор та доповнень</translation>
 		</message>
 		<message>
 			<location filename="../main_window_ui.h" line="343"/>
@@ -698,7 +698,7 @@
 		<message>
 			<location filename="../main_window.cpp" line="326"/>
 			<source>Download Cheats For All Installed Games</source>
-			<translation>Завантажити чити для всіх встановлених ігор</translation>
+			<translation>Завантажити чити для всіх Встановлених ігор</translation>
 		</message>
 		<message>
 			<location filename="../main_window.cpp" line="328"/>
@@ -1129,7 +1129,7 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="85"/>
 			<source>Restore Defaults</source>
-			<translation>За замовчуванням</translation>
+			<translation>Початкові налаштування</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="86"/>
@@ -1169,7 +1169,7 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="297"/>
 			<source>ps4proCheckBox</source>
-			<translation>Режим PS4 Pro:\nЗмушує емулятор працювати як PS4 Pro, що може активувати спеціальні функції в іграх, які підтримують це.</translation>
+			<translation>Режим PS4 Pro:\nЕмулятор працюватиме як PS4 Pro, що може активувати спеціальні функції в іграх, які підтримують це.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="438"/>
@@ -1264,7 +1264,7 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="318"/>
 			<source>heightDivider</source>
-			<translation>Розділювач Vblank:\nЧастота кадрів, з якою оновлюється емулятор, множиться на це число. Зміна цього параметра може мати негативні наслідки, такі як збільшення швидкості гри або порушення критичних функцій гри, які цього не очікують!</translation>
+			<translation>Розділювач Vblank:\nЧастота кадрів, з якою оновлюється емулятор, множиться на це число. Зміна цього параметра може мати негативні наслідки, такі як збільшення швидкості гри або порушення критичних функцій гри!</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="320"/>
@@ -1299,17 +1299,17 @@
 		<message>
 			<location filename="../settings_dialog.cpp" line="331"/>
 			<source>vkValidationCheckBox</source>
-			<translation>Увімкнути шари валідації Vulkan:\nВключає систему, яка перевіряє стан рендерера Vulkan і логує інформацію про його внутрішній стан. Це знизить продуктивність і, ймовірно, змінить поведінку емуляції.</translation>
+			<translation>Увімкнути шари валідації Vulkan:\nВключає систему, яка перевіряє стан рендеру Vulkan і логує інформацію про його внутрішній стан. Це знизить продуктивність і, ймовірно, змінить поведінку емуляції.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="333"/>
 			<source>vkSyncValidationCheckBox</source>
-			<translation>Увімкнути валідацію синхронізації Vulkan:\nВключає систему, яка перевіряє таймінг завдань рендерингу Vulkan. Це знизить продуктивність і, ймовірно, змінить поведінку емуляції.</translation>
+			<translation>Увімкнути валідацію синхронізації Vulkan:\nВключає систему, яка перевіряє часові параметри завдань рендерингу Vulkan. Це зменшить продуктивність і, ймовірно, змінить поведінку емуляції.</translation>
 		</message>
 		<message>
 			<location filename="../settings_dialog.cpp" line="335"/>
 			<source>rdocCheckBox</source>
-			<translation>Увімкнути налагодження RenderDoc:\nЯкщо увімкнено, емулятор забезпечить сумісність із Renderdoc, даючи змогу захоплювати й аналізувати поточні кадри під час рендерингу.</translation>
+			<translation>Увімкнути налагодження RenderDoc:\nЯкщо увімкнено, емулятор забезпечить сумісність із RenderDoc, що дозволяє захоплювати та аналізувати поточні кадри під час рендерингу.</translation>
 		</message>
 	</context>
 	<context>
@@ -1425,7 +1425,7 @@
 		<message>
 			<location filename="../check_update.cpp" line="179"/>
 			<source>Do you want to update?</source>
-			<translation>Ви хочете оновитися?</translation>
+			<translation>Ви бажаєте оновити емулятор?</translation>
 		</message>
 		<message>
 			<location filename="../check_update.cpp" line="193"/>
@@ -1440,7 +1440,7 @@
 		<message>
 			<location filename="../check_update.cpp" line="199"/>
 			<source>Update</source>
-			<translation>Оновитись</translation>
+			<translation>Оновити</translation>
 		</message>
 		<message>
 			<location filename="../check_update.cpp" line="200"/>

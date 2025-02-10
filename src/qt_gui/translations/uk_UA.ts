@@ -66,7 +66,7 @@
 	<context>
 		<name>GameInstallDialog</name>
 		<message>
-			<source>shadPS4 - Choose directory</source>
+			<source>shadPS4 - Choose directory       shadPS4 - Choose directory</source>
 			<translation>shadPS4 - Виберіть папку</translation>
 		</message>
 		<message>
@@ -725,6 +725,10 @@
 			<translation>Увімкнути NULL GPU</translation>
 		</message>
 		<message>
+		    <source>Enable HDR</source>
+			<translation>Увімкнути HDR</translation>
+		</message>
+		<message>
 			<source>Paths</source>
 			<translation>Шляхи</translation>
 		</message>
@@ -744,6 +748,10 @@
         	<source>Save Data Path</source>
         	<translation>Шлях до файлів збережень</translation>
     	</message>
+		<message>
+			<source>Browse</source>
+			<translation>Обрати</translation>
+		</message>
 		<message>
 			<source>Debug</source>
 			<translation>Налагодження</translation>
@@ -1014,6 +1022,10 @@
 			<translation>Увімкнути NULL GPU:\nДля технічного налагодження відключає рендеринг гри так, ніби графічної карти немає.</translation>
 		</message>
 		<message>
+			<source>enableHDRCheckBox</source>
+			<translation>Увімкнути HDR:\nВмикає HDR у іграх, які це підтримують.\nВаш монітор повинен підтримувати колірний простір BT2020 PQ та формат swapchain RGB10A2.</translation>
+		</message>
+		<message>
 			<source>gameFoldersBox</source>
 			<translation>Ігрові папки:\nСписок папок, що скануватимуться для виявлення ігор.</translation>
 		</message>
@@ -1111,6 +1123,10 @@
 		<message>
 			<source>Delete File</source>
 			<translation>Видалити файл</translation>
+		</message>
+		<message>
+			<source>Close</source>
+			<translation>Закрити</translation>
 		</message>
 		<message>
 			<source>No files selected.</source>

@@ -214,6 +214,9 @@ bool Instance::CreateDevice() {
                           vk::PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT,
                           vk::PhysicalDevicePortabilitySubsetFeaturesKHR>();
     features = feature_chain.get().features;
+#ifdef __APPLE__
+    portability_features = feature_chain.get<vk::PhysicalDevicePortabilitySubsetFeaturesKHR>();
+#endif
 
     const vk::StructureChain properties_chain = physical_device.getProperties2<
         vk::PhysicalDeviceProperties2, vk::PhysicalDeviceVulkan11Properties,
@@ -251,7 +254,9 @@ bool Instance::CreateDevice() {
     add_extension(VK_EXT_SHADER_DEMOTE_TO_HELPER_INVOCATION_EXTENSION_NAME);
     add_extension(VK_KHR_SYNCHRONIZATION_2_EXTENSION_NAME);
     add_extension(VK_EXT_EXTENDED_DYNAMIC_STATE_EXTENSION_NAME);
-    tooling_info = add_extension(VK_EXT_TOOLING_INFO_EXTENSION_NAME);
+    // Currently causes issues with Reshade on AMD proprietary, disable until figured out.
+    tooling_info = GetDriverID() != vk::DriverId::eAmdProprietary &&
+                   add_extension(VK_EXT_TOOLING_INFO_EXTENSION_NAME);
     const bool maintenance4 = add_extension(VK_KHR_MAINTENANCE_4_EXTENSION_NAME);
 
     add_extension(VK_KHR_SWAPCHAIN_EXTENSION_NAME);
@@ -282,7 +287,7 @@ bool Instance::CreateDevice() {
 
 #ifdef __APPLE__
     // Required by Vulkan spec if supported.
-    add_extension(VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME);
+    portability_subset = add_extension(VK_KHR_PORTABILITY_SUBSET_EXTENSION_NAME);
 #endif
 
     const auto family_properties = physical_device.getQueueFamilyProperties();
@@ -403,7 +408,7 @@ bool Instance::CreateDevice() {
             .legacyVertexAttributes = true,
         },
 #ifdef __APPLE__
-        feature_chain.get<vk::PhysicalDevicePortabilitySubsetFeaturesKHR>(),
+        portability_features,
 #endif
     };
 
